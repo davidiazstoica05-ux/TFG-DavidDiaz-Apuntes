@@ -8,4 +8,9 @@
 		<section name="ImportExportWizard.dialogBounds">
 		</section>
 	</section>
+	<section name="EditorSelectionDialog">
+		<item key="EditorSelectionDialog.STORE_ID_FILE_EXTENSION" value=".html"/>
+		<item key="EditorSelectionDialog.STORE_ID_INTERNAL_EXTERNAL" value="true"/>
+		<item key="EditorSelectionDialog.STORE_ID_DESCR" value="Archivo de origen Antigravity"/>
+	</section>
 </section>

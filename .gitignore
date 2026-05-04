@@ -1,4 +1,4 @@
-# Maven
+#Maven
 target/
 *.jar
 *.war
@@ -15,4 +15,7 @@ __MACOSX/
 
 # Logs
 *.log
+
+# Archivos de configuración y seguridad (BDD)
+application.properties
 
