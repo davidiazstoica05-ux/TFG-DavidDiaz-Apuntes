@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Control - Logística Express</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Definimos algunos colores personalizados de nuestra marca */
+        :root {
+            --color-primario: #0284c7;
+            /* Azul cielo */
+            --color-secundario: #f8fafc;
+            /* Gris muy claro para fondos */
+        }
+
+        body {
+            background-color: var(--color-secundario);
+            font-family: sans-serif;
+        }
+
+        .sidebar-link-active {
+            background-color: #0c4a6e;
+            border-left: 4px solid #38bdf8;
+        }
+    </style>
+</head>
+
+<body class="h-screen flex overflow-hidden">
+
+    <aside class="w-64 bg-slate-900 text-slate-100 flex flex-col p-4 space-y-8">
+        <div class="text-2xl font-bold text-center text-sky-400">Logística<span class="text-white">Admin</span></div>
+        <nav class="flex-grow space-y-2">
+            <a href="#" class="block p-3 rounded-md sidebar-link-active text-sky-100">🏠 Resumen</a>
+            <a href="#" class="block p-3 rounded-md hover:bg-slate-800 text-slate-300">📦 Gestión de Envíos</a>
+            <a href="#" class="block p-3 rounded-md hover:bg-slate-800 text-slate-300">🚚 Repartidores</a>
+            <a href="#" class="block p-3 rounded-md hover:bg-slate-800 text-slate-300">📊 Reportes</a>
+        </nav>
+        <div class="border-t border-slate-700 pt-4 text-slate-500 text-sm text-center">v1.0.0</div>
+    </aside>
+
+    <main class="flex-1 flex flex-col h-full">
+
+        <header class="bg-white border-b border-slate-200 p-4 flex justify-between items-center shadow-sm">
+            <h1 class="text-2xl font-semibold text-slate-800">Panel de Resumen Diario</h1>
+            <div class="flex items-center space-x-4">
+                <span class="text-slate-600">Bienvenido, **Admin Laura**</span>
+                <div
+                    class="w-10 h-10 rounded-full bg-sky-100 border border-sky-300 flex items-center justify-center text-sky-700 font-bold">
+                    L</div>
+                <button class="text-slate-500 hover:text-red-500">Salir</button>
+            </div>
+        </header>
+
+        <div class="flex-1 overflow-y-auto p-6 md:p-8 space-y-8">
+
+            <section class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-xl border border-slate-100 shadow-sm flex items-center space-x-4">
+                    <div class="p-4 bg-sky-100 rounded-full text-sky-600 text-2xl">📦</div>
+                    <div>
+                        <div class="text-3xl font-bold text-slate-900" id="kpi-total">120</div>
+                        <div class="text-sm font-medium text-slate-500">Envíos Hoy</div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl border border-slate-100 shadow-sm flex items-center space-x-4">
+                    <div class="p-4 bg-amber-100 rounded-full text-amber-600 text-2xl">🚚</div>
+                    <div>
+                        <div class="text-3xl font-bold text-slate-900" id="kpi-ruta">45</div>
+                        <div class="text-sm font-medium text-slate-500">En Ruta</div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl border border-slate-100 shadow-sm flex items-center space-x-4">
+                    <div class="p-4 bg-emerald-100 rounded-full text-emerald-600 text-2xl">✅</div>
+                    <div>
+                        <div class="text-3xl font-bold text-slate-900" id="kpi-entregado">72</div>
+                        <div class="text-sm font-medium text-slate-500">Entregados</div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl border border-slate-100 shadow-sm flex items-center space-x-4">
+                    <div class="p-4 bg-red-100 rounded-full text-red-600 text-2xl">🚨</div>
+                    <div>
+                        <div class="text-3xl font-bold text-slate-900" id="kpi-incidencias">3</div>
+                        <div class="text-sm font-medium text-slate-500">Incidencias</div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
+
+                <section class="xl:col-span-2 bg-white p-6 rounded-xl border border-slate-100 shadow-sm">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+                        <h2 class="text-xl font-semibold text-slate-800">Últimos Envíos</h2>
+                        <div class="flex border border-slate-200 rounded-lg overflow-hidden text-sm"
+                            id="filter-container">
+                            <button onclick="filtrarTabla('Todos')"
+                                class="px-4 py-2 bg-slate-100 font-medium text-slate-700 hover:bg-slate-200">Todos</button>
+                            <button onclick="filtrarTabla('Pendiente')"
+                                class="px-4 py-2 bg-white text-slate-600 hover:bg-slate-100">Pendientes</button>
+                            <button onclick="filtrarTabla('En Ruta')"
+                                class="px-4 py-2 bg-white text-slate-600 hover:bg-slate-100">En Ruta</button>
+                            <button onclick="filtrarTabla('Entregado')"
+                                class="px-4 py-2 bg-white text-slate-600 hover:bg-slate-100">Entregados</button>
+                            <button onclick="filtrarTabla('Incidencia')"
+                                class="px-4 py-2 bg-white text-red-600 hover:bg-red-50">Incidencias</button>
+                        </div>
+                    </div>
+
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm text-left">
+                            <thead class="text-xs text-slate-500 uppercase bg-slate-50">
+                                <tr>
+                                    <th class="px-4 py-3">ID Paquete</th>
+                                    <th class="px-4 py-3">Destino</th>
+                                    <th class="px-4 py-3">Estado</th>
+                                    <th class="px-4 py-3">Repartidor</th>
+                                    <th class="px-4 py-3 text-right">Acción</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tabla-envios-body" class="divide-y divide-slate-100">
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section class="bg-white p-6 rounded-xl border border-slate-100 shadow-sm">
+                    <h2 class="text-xl font-semibold text-slate-800 mb-6">Estado de Repartidores</h2>
+                    <div class="space-y-4" id="lista-repartidores">
+                    </div>
+                </section>
+
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        // --- DATOS MOCK (Sustituye esto por llamadas a tu base de datos real) ---
+
+        const enviosData = [
+            { id: 'PK-3902', destino: 'Calle Alcor, 12, Sevilla', estado: 'Pendiente', repartidor: 'No asignado' },
+            { id: 'PK-3901', destino: 'Av. Constitución, 5, Málaga', estado: 'En Ruta', repartidor: 'Ana Gómez' },
+            { id: 'PK-3900', destino: 'Calle Betis, 22, Sevilla', estado: 'Entregado', repartidor: 'Ana Gómez' },
+            { id: 'PK-3899', destino: 'Calle Feria, 101, Sevilla', estado: 'En Ruta', repartidor: 'Carlos Ruiz' },
+            { id: 'PK-3898', destino: 'Av. Palmera, 3, Sevilla', estado: 'Incidencia', repartidor: 'Luis Pérez' },
+            { id: 'PK-3897', destino: 'Plaza Nueva, 1, Sevilla', estado: 'Entregado', repartidor: 'Ana Gómez' },
+        ];
+
+        const repartidoresData = [
+            { nombre: 'Ana Gómez', estado: 'En Ruta', carga: 12 },
+            { nombre: 'Carlos Ruiz', estado: 'En Ruta', carga: 8 },
+            { nombre: 'Luis Pérez', estado: 'Incidencia', carga: 1 },
+            { nombre: 'Marta Soler', estado: 'Disponible', carga: 0 },
+        ];
+
+        // --- FUNCIONES DE RENDERIZADO (Dibuja los datos en pantalla) ---
+
+        // Función para renderizar la tabla de envíos (con opción de filtrado)
+        function renderTablaEnvios(filtro = 'Todos') {
+            const tbody = document.getElementById('tabla-envios-body');
+            tbody.innerHTML = ''; // Limpia la tabla actual
+
+            enviosData.forEach(envio => {
+                // Si hay un filtro aplicado y no coincide, saltamos este envío
+                if (filtro !== 'Todos' && envio.estado !== filtro) return;
+
+                // Definimos el estilo visual del 'Badge' (etiqueta) según el estado
+                let badgeClass = 'bg-slate-100 text-slate-600';
+                if (envio.estado === 'En Ruta') badgeClass = 'bg-amber-100 text-amber-800';
+                if (envio.estado === 'Entregado') badgeClass = 'bg-emerald-100 text-emerald-800';
+                if (envio.estado === 'Incidencia') badgeClass = 'bg-red-100 text-red-800 font-medium';
+
+                // Creamos la fila HTML
+                const fila = `
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-4 py-4 font-mono font-medium text-sky-700">${envio.id}</td>
+                        <td class="px-4 py-4 text-slate-700">${envio.destino}</td>
+                        <td class="px-4 py-4">
+                            <span class="px-3 py-1 text-xs font-semibold rounded-full ${badgeClass}">
+                                ${envio.estado}
+                            </span>
+                        </td>
+                        <td class="px-4 py-4 text-slate-600">${envio.repartidor}</td>
+                        <td class="px-4 py-4 text-right">
+                            <button class="text-sky-600 hover:text-sky-800 font-medium">Gestionar</button>
+                        </td>
+                    </tr>
+                `;
+                tbody.innerHTML += fila;
+            });
+        }
+
+        // Función para renderizar la lista de repartidores
+        function renderListaRepartidores() {
+            const lista = document.getElementById('lista-repartidores');
+            lista.innerHTML = ''; // Limpia la lista
+
+            repartidoresData.forEach(repartidor => {
+                // Punto de estado visual
+                let statusDot = 'bg-slate-400'; // Disponible/Inactivo
+                if (repartidor.estado === 'En Ruta') statusDot = 'bg-emerald-500';
+                if (repartidor.estado === 'Incidencia') statusDot = 'bg-red-500';
+
+                const item = `
+                    <div class="flex justify-between items-center p-4 bg-slate-50 rounded-lg border border-slate-100">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-2.5 h-2.5 rounded-full ${statusDot}" title="${repartidor.estado}"></div>
+                            <div>
+                                <div class="font-medium text-slate-800">${repartidor.nombre}</div>
+                                <div class="text-xs text-slate-500">${repartidor.estado}</div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-lg font-bold text-slate-900">${repartidor.carga}</div>
+                            <div class="text-xs text-slate-400">paquetes</div>
+                        </div>
+                    </div>
+                `;
+                lista.innerHTML += item;
+            });
+        }
+
+        // --- FUNCIONES DE INTERACCIÓN (Lógica de usuario) ---
+
+        // Función que se ejecuta al hacer clic en los botones de filtro
+        function filtrarTabla(estado) {
+            // 1. Re-dibuja la tabla solo con el estado seleccionado
+            renderTablaEnvios(estado);
+
+            // 2. Actualiza visualmente el botón "activo"
+            const botones = document.querySelectorAll('#filter-container button');
+            botones.forEach(btn => {
+                btn.classList.remove('bg-slate-100', 'font-medium', 'text-slate-700');
+                btn.classList.add('bg-white', 'text-slate-600');
+            });
+
+            // Ponemos el botón actual como activo (esto es simplificado, en un framework real como React/Vue es automático)
+            event.currentTarget.classList.remove('bg-white', 'text-slate-600');
+            event.currentTarget.classList.add('bg-slate-100', 'font-medium', 'text-slate-700');
+        }
+
+        // --- INICIALIZACIÓN ---
+        // Al cargar la página, dibujamos todo por primera vez
+        document.addEventListener('DOMContentLoaded', () => {
+            renderTablaEnvios(); // Carga 'Todos' por defecto
+            renderListaRepartidores();
+        });
+
+    </script>
+</body>
+
+</html>

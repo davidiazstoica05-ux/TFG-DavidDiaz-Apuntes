@@ -1,0 +1,6 @@
+INDEX VERSION 1.134+C:\Users\diaz.stdav24_triana\Desktop\dam\TFG\TFG-ejemplos-codigo\.metadata\.plugins\org.eclipse.jdt.core
+1028333654.index
+1479273052.index
+164713589.index
+2134580072.index
+1865797976.index

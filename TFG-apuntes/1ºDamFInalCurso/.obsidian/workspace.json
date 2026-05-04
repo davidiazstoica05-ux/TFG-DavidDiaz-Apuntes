@@ -1,0 +1,197 @@
+{
+  "main": {
+    "id": "99b23b9a25cdcce5",
+    "type": "split",
+    "children": [
+      {
+        "id": "420225dfdb4e01ee",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6378ae7210829d99",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Dudas o propuestas.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Dudas o propuestas"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "ce4eb8f6e0e545fa",
+    "type": "split",
+    "children": [
+      {
+        "id": "7f9d01b6285b306a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e87cd06de7d354a1",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Explorador de archivos"
+            }
+          },
+          {
+            "id": "362b12931ac9715b",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Buscar"
+            }
+          },
+          {
+            "id": "3aa1b778a840ceea",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Marcadores"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "6c73a233670555b3",
+    "type": "split",
+    "children": [
+      {
+        "id": "95aad0f14cbc7bc0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "234998fc12f55bc9",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "ProyectoFinalCurso 1ºDAM.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Enlaces entrantes de ProyectoFinalCurso 1ºDAM"
+            }
+          },
+          {
+            "id": "442b78e3075be50a",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "ProyectoFinalCurso 1ºDAM.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Enlaces salientes de ProyectoFinalCurso 1ºDAM"
+            }
+          },
+          {
+            "id": "6375d11b8cc8440f",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Etiquetas"
+            }
+          },
+          {
+            "id": "63956e4eb7eb004c",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "Todas las propiedades"
+            }
+          },
+          {
+            "id": "22b969124aea3792",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "ProyectoFinalCurso 1ºDAM.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Esquema de ProyectoFinalCurso 1ºDAM"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Abrir selector rápido": false,
+      "graph:Abrir vista gráfica": false,
+      "canvas:Crear nuevo lienzo": false,
+      "daily-notes:Abrir la nota de hoy": false,
+      "templates:Insertar plantilla": false,
+      "command-palette:Abrir paleta de comandos": false,
+      "bases:Crear nueva base": false
+    }
+  },
+  "active": "e87cd06de7d354a1",
+  "lastOpenFiles": [
+    "vistas",
+    "PlantillaMenú.png",
+    "Dudas o propuestas.md",
+    "vista4dashboardLateral.png",
+    "ProyectoFinalCurso 1ºDAM.md",
+    "LoginConceptual.png",
+    "LoginConceptual.png.md",
+    "Bienvenido.md"
+  ]
+}

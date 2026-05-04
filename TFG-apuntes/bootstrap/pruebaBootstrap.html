@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prueba</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <!--jquery.js, nos tiene que saltar las alarmas ya que eso es de bootstrap 4. 
+        
+        Bootstrap 5 no lo requiere-->
+
+</head>
+
+<body>
+    <!--Bootstrap tiene redifinido los estilos por defecto-->
+    <main class="container">
+        <!--Container y container-fluid sirven para centrar el contenido y definir el ancho del contenedor -->
+        <h1 class="display-1 text-uppercase bg-warning text-danger text-center">hola mundo!</h1>
+        <p class="mark text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet neque nostrum
+            iste,
+            dolorum
+            provident quo
+            voluptatum corporis dicta obcaecati minima explicabo! Tempore non corrupti, neque reprehenderit molestiae
+            excepturi eum inventore!</p>
+        <!--En bootstrap 5 en lugar de margin left o margin right se utiliza text-start, text-center, text-end-->
+        <section class="container-fluid">
+            <!-- los row siempre tienen que estar dentro de un container o container-fluid-->
+            <div class="row">
+                <p id="primeraColumna" class="col-12 col-md-6 col-lg-4 border border-5 border-danger ">
+
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor debitis sint, ipsam rerum rem dicta,
+                    eveniet, dolorem aut ab enim laboriosam accusantium nobis illo aspernatur consequatur ullam quis!
+                    Voluptas, quo.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor debitis sint, ipsam
+                    rerum rem dicta, eveniet, dolorem aut ab enim laboriosam accusantium nobis illo aspernatur
+                    consequatur ullam quis! Voluptas, quo.Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Dolor debitis sint, ipsam
+
+                </p>
+
+                <div id="segundaColumna" class="col-12 col-md-3 col-lg-4 border border-5 border-danger ">
+                    <img src=" ../lenguajeDeMarcas/Tema
+                    4/DiazDavid/RecursosTema4/ejercicio4/guantes-spiderman-infantil-343853.jpg" alt="" class="rounded"
+                        width="100%">
+                </div>
+                <p id="terceraColumna" class="col-12 col-md-3 col-lg-4 border border-5 border-danger ">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor debitis sint, ipsam rerum rem
+                    dicta,
+                    eveniet, dolorem aut ab enim laboriosam accusantium nobis illo aspernatur consequatur ullam
+                    quis!
+                    Voluptas, quo.
+                </p>
+            </div>
+        </section>
+
+    </main>
+</body>
+
+</html>

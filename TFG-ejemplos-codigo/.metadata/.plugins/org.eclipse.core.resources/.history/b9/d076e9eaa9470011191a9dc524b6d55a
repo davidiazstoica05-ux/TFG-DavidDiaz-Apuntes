@@ -1,0 +1,19 @@
+package service;
+
+import org.springframework.stereotype.Service;
+
+import model.Producto;
+
+@Service
+public class ServiceProducto {
+
+	public Producto obtenerProducto() {
+		return new Producto(112,"camiseta der betis",60.70);
+		
+		
+		
+	}
+	
+	
+	
+}

@@ -1,0 +1,15 @@
+package model;
+
+import jakarta.persistence.Entity;
+import lombok.Data;
+
+@Entity @Data 
+public class Producto {
+	
+	private long id;
+	private String nombre; 
+	private double precio;
+	
+	
+
+}

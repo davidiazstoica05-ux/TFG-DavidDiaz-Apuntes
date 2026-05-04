@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaludoPersonalizado</title>
+</head>
+
+<body>
+
+    <h1>
+        Hola <span th:text="${persona.nombre + ' ' + persona.apellidos}"> amigo!</span>
+    </h1>
+    <h1>Tu nota media <span th:text="${#numbers.formatDecimal(persona.notaMedia,1,1,'POINT')}"></span></h1>
+    <h1> Tu fecha de nacimiento <span th:text="$dates.format(persona.fecha)"></span></h1>
+</body>
+
+</html>

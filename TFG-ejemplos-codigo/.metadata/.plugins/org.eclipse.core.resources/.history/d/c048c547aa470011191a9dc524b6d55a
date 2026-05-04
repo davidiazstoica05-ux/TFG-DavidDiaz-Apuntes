@@ -1,0 +1,29 @@
+package service;
+
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import model.Producto;
+
+@Service
+public class ServiceProducto {
+
+	public Producto obtenerProducto() {
+		return new Producto(112,"camiseta der betis",60.70);
+		
+	public List<Producto> obtenerListaProductos(){
+		
+		return Arrays.asList(
+				new Producto(123, "camiseta der sevilla", 60.4));
+		
+	}
+		
+		
+	}
+	
+	
+	
+}
