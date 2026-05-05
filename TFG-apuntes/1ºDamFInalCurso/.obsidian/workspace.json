@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "6c73a233670555b3",
@@ -183,7 +184,7 @@
       "bases:Crear nueva base": false
     }
   },
-  "active": "e87cd06de7d354a1",
+  "active": "6378ae7210829d99",
   "lastOpenFiles": [
     "vistas",
     "PlantillaMenú.png",

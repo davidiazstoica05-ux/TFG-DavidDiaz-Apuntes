@@ -13,9 +13,9 @@
 <body class="bg-primary text-warning">
 
 
-    <div class="table table-striped text-center container mt-5 w-25">
-        <h1 class="text-center mt-5 p-4"> Productos </h1>
-        <table>
+    <div class="d-flex justify-content-center align-items-center flex-column container mt-5 w-25">
+        <h1> Productos </h1>
+        <table class="table table-striped">
             <thead>
                 <th class="p-2">Nombre</th>
                 <th>Precio</th>
@@ -23,7 +23,8 @@
             <tbody>
                 <tr th:each="producto : ${productos}">
                     <td class="p-4" th:text="${producto.nombre}">Nombre del producto</td>
-                    <td class="p-4" th:text="${#numbers.formatCurrency(producto.precio)}">Precio del producto</td>
+                    <td class="p-4" th:text="${#numbers.formatDecimal(producto.precio,1,2,'COMMA') + '   €'}">Precio del
+                        producto</td>
                 </tr>
             </tbody>
         </table>

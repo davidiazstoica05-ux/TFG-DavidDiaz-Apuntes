@@ -13,11 +13,40 @@
     <!--jquery.js, nos tiene que saltar las alarmas ya que eso es de bootstrap 4. 
         
         Bootstrap 5 no lo requiere-->
+    <!--Antes de empezar hay que pensar, en que si vamos a copiar codigo tenemos que hacerlo con cabeza, cambiando los nombres de las clases, atributos de etiquetas, etc-->
 
 </head>
 
 <body>
-    <!--Bootstrap tiene redifinido los estilos por defecto-->
+    <!--Inicio barra de navegacion, si usamos sticky hacae que se quede arriba todo el tiempo-->
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top bg-success">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="javascript:void(0)">Logo</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)">Link</a>
+                    </li>
+                    <!-- Barra lateral -->
+                    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#miOffcanvas">
+                        Abrir barra lateral
+                    </button>
+                    <!--modal -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+                        Abrir ventana
+                    </button>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="text" placeholder="Search">
+                    <button class="btn btn-primary" type="button">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav> <!--Bootstrap tiene redifinido los estilos por defecto-->
     <main class="container">
         <!--Container y container-fluid sirven para centrar el contenido y definir el ancho del contenedor -->
         <h1 class="display-1 text-uppercase bg-warning text-danger text-center">hola mundo!</h1>
@@ -57,7 +86,99 @@
             </div>
         </section>
 
+        <!--Carousel (Imágenes que se mueven)-->
+        <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+            <!-- Indicators/dots -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+            </div>
+
+            <!-- The slideshow/carousel -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="la.jpg" alt="Los Angeles" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="chicago.jpg" alt="Chicago" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="ny.jpg" alt="New York" class="d-block w-100">
+                </div>
+            </div>
+
+            <!-- Left and right controls/icons -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+
+
     </main>
+
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Hola</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente blanditiis odit aliquam incidunt
+                    distinctio fugit, reiciendis eveniet dolor eligendi ab quasi deserunt voluptatum qui nobis quia nisi
+                    cupiditate. Culpa, voluptate.
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="offcanvas offcanvas-start" id="miOffcanvas">
+        <div class="offcanvas-header">
+            <h1 class="offcanvas-title">Heading</h1>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <p>Some text lorem ipsum.</p>
+            <p>Some text lorem ipsum.</p>
+            <button class="btn btn-secondary" type="button">A Button</button>
+        </div>
+    </div>
+
+
+
+
+    <div class="offcanvas offcanvas-end" id="miOffcanvasDerecha">
+        <div class="offcanvas-header">
+            <h1 class="offcanvas-title">Heading</h1>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <p>Some text lorem ipsum.</p>
+            <p>Some text lorem ipsum.</p>
+            <button class="btn btn-secondary" type="button">A Button</button>
+        </div>
+    </div>
+
+
+
+
 </body>
 
 </html>
