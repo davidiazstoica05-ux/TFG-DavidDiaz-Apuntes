@@ -6,9 +6,6 @@ import com.ejemplo03.productos.ejemplo_03_productos_david.model.Producto;
 
 public interface ProductoRepository 
 extends JpaRepository<Producto, Long>{
-	
-	
-	
-	
+
 
 }
